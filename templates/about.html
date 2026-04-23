@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | MalariaScanAI</title>
+</head>
+
+<body class="bg-light">
+
+    {% include 'navbar.html' %}
+
+    <div class="container-fluid bg-white border-bottom py-5">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <img src="../static/images/bg/bg2.jpg" alt="Laboratory Scientist" class="img-fluid rounded-4 shadow-lg w-100" style="object-fit: cover; max-height: 450px;">
+                </div>
+                <div class="col-lg-6 pe-lg-5">
+                    <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-3">Our Mission</span>
+                    <h1 class="display-5 fw-bold text-dark mb-4">Bridging the Gap in Global Healthcare</h1>
+                    <p class="lead text-muted mb-4">
+                        <strong>MalariaScanAI</strong> is a pioneering healthcare technology organization dedicated to harnessing the power of artificial intelligence to revolutionize disease diagnosis. 
+                    </p>
+                    <p class="text-muted">
+                        Our core mission is to provide rapid, highly accurate, and accessible malaria detection solutions. By automating the microscopic analysis of blood smears, we empower healthcare providers in both clinical and remote settings to make timely, life-saving decisions without relying solely on limited laboratory infrastructure.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5 mt-4 mb-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Foundation</h2>
+            <p class="text-muted">The core pillars that drive our technology forward.</p>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+                <div class="card-info p-5 card-red hover-card h-100 text-center shadow-sm rounded-4 border-0">
+                    <div class="bg-white rounded-circle d-inline-flex p-3 mb-4 shadow-sm">
+                        <ion-icon name="eye" class="text-danger" style="font-size: 32px;"></ion-icon>
+                    </div>
+                    <h4 class="fw-bold mb-3">Our Vision</h4>
+                    <p class="mb-0 opacity-75 small line-height-lg">
+                        We envision a future where malaria is no longer a fatal threat due to delayed diagnosis. By democratizing access to expert-level diagnostic tools, we actively contribute to the global eradication of this devastating disease.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card-info p-5 card-blue hover-card h-100 text-center shadow-sm rounded-4 border-0">
+                    <div class="bg-white rounded-circle d-inline-flex p-3 mb-4 shadow-sm">
+                        <ion-icon name="people" class="text-primary" style="font-size: 32px;"></ion-icon>
+                    </div>
+                    <h4 class="fw-bold mb-3">Our Team</h4>
+                    <p class="mb-0 opacity-75 small line-height-lg">
+                        Our collective comprises passionate data scientists, machine learning engineers, and medical professionals. Together, we combine clinical expertise with cutting-edge computer vision to build technology you can trust.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card-info p-5 card-green hover-card h-100 text-center shadow-sm rounded-4 border-0">
+                    <div class="bg-white rounded-circle d-inline-flex p-3 mb-4 shadow-sm">
+                        <ion-icon name="hardware-chip" class="text-success" style="font-size: 32px;"></ion-icon>
+                    </div>
+                    <h4 class="fw-bold mb-3">Our Technology</h4>
+                    <p class="mb-0 opacity-75 small line-height-lg">
+                        Trained on a vast, clinically validated dataset of blood smears, our convolutional neural networks map the intricate visual signatures of malaria parasites, achieving diagnostic precision that rivals human experts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password | MalariaScanAI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+{% include 'navbar.html' %}
+
+<div class="container py-5" style="min-height: 80vh;">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+
+```
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-5">
+
+                <h3 class="fw-bold text-center mb-4">Reset Password</h3>
+
+                <form method="post">
+
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold">NEW PASSWORD</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label small fw-semibold">CONFIRM PASSWORD</label>
+                        <input type="password" name="confirm" class="form-control" required>
+                    </div>
+
+                    <div class="d-grid">
+                        <button class="btn btn-success fw-bold">Update Password</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+```
+
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+</html>

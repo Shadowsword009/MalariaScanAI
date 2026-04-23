@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Architecture | MalariaScanAI</title>
+</head>
+
+<body class="bg-light">
+    {% include 'navbar.html' %}
+
+    <div class="container-fluid bg-white border-bottom py-5">
+        <div class="container text-center py-4">
+            <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-3">Under the Hood</span>
+            <h1 class="display-5 fw-bold text-dark mb-3">The Science of Detection</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 800px;">
+                Deep learning, a subset of machine learning, has revolutionized medical imaging. By leveraging artificial neural networks with multiple layers, our models learn complex visual patterns in blood cells to make highly accurate predictions.
+            </p>
+        </div>
+    </div>
+
+    <div class="container py-5 mt-3">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Network Architectures</h2>
+            <p class="text-muted">We benchmarked three state-of-the-art CNNs to find the perfect balance of speed and accuracy.</p>
+        </div>
+        
+        <div class="row g-4 justify-content-center align-items-stretch">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 hover-card p-2">
+                    <div style="height: 180px;" class="d-flex align-items-center justify-content-center p-3">
+                        <img src="../static/images/model/densenet.png" alt="DenseNet Diagram" class="img-fluid" style="max-height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="card-body border-top">
+                        <h4 class="fw-bold mb-3 d-flex align-items-center">
+                            <ion-icon name="git-network-outline" class="text-danger me-2"></ion-icon>DenseNet
+                        </h4>
+                        <p class="text-muted small mb-0">
+                            Promotes feature reuse by connecting each layer to every other layer in a feed-forward manner. This dense connectivity enables direct information flow, improving feature propagation and solving vanishing gradient problems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 hover-card p-2">
+                    <div style="height: 180px;" class="d-flex align-items-center justify-content-center p-3">
+                        <img src="../static/images/model/efficientnet.webp" alt="EfficientNet Diagram" class="img-fluid" style="max-height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="card-body border-top">
+                        <h4 class="fw-bold mb-3 d-flex align-items-center">
+                            <ion-icon name="flash-outline" class="text-success me-2"></ion-icon>EfficientNet
+                        </h4>
+                        <p class="text-muted small mb-0">
+                            A highly scalable architecture that achieves peak accuracy by uniformly scaling the network across width, depth, and resolution. This balanced strategy provides optimal resource utilization.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 hover-card p-2">
+                    <div style="height: 180px;" class="d-flex align-items-center justify-content-center p-3">
+                        <img src="../static/images/model/MobileNet.png" alt="MobileNet Diagram" class="img-fluid" style="max-height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="card-body border-top">
+                        <h4 class="fw-bold mb-3 d-flex align-items-center">
+                            <ion-icon name="phone-portrait-outline" class="text-primary me-2"></ion-icon>MobileNet
+                        </h4>
+                        <p class="text-muted small mb-0">
+                            Designed specifically for resource-constrained environments. It uses depthwise separable convolutions to significantly reduce parameters and computational cost, making it ideal for real-time edge computing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow text-center overflow-hidden">
+                    <div class="card-header bg-dark text-white py-3">
+                        <h3 class="mb-0 fw-bold fs-5">Model Performance Benchmarks</h3>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped mb-0 align-middle">
+                                <thead class="table-light text-muted small">
+                                    <tr>
+                                        <th scope="col" class="py-3 px-4 text-start">RANK</th>
+                                        <th scope="col" class="py-3">ARCHITECTURE</th>
+                                        <th scope="col" class="py-3">TRAINING ACCURACY</th>
+                                        <th scope="col" class="py-3 text-end px-4">TEST ACCURACY</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="text-start px-4 text-warning fs-5"><ion-icon name="trophy"></ion-icon></th>
+                                        <td class="fw-bold">EfficientNet</td>
+                                        <td><span class="badge bg-success text-white px-2 py-1">93.19%</span></td>
+                                        <td class="text-end px-4 fw-bold text-success">90.21%</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-start px-4 text-muted fs-5"><ion-icon name="medal"></ion-icon></th>
+                                        <td class="fw-bold">DenseNet</td>
+                                        <td><span class="badge bg-primary px-2 py-1">81.03%</span></td>
+                                        <td class="text-end px-4 fw-bold">79.44%</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-start px-4 text-muted fs-5"><ion-icon name="medal-outline"></ion-icon></th>
+                                        <td class="fw-bold">MobileNet</td>
+                                        <td><span class="badge bg-secondary px-2 py-1">75.40%</span></td>
+                                        <td class="text-end px-4 fw-bold">74.05%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light text-muted small py-3">
+                        *Results based on standardized validation split using the Malaria Cell Images Dataset.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

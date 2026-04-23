@@ -1,0 +1,50 @@
+/* ... keep your existing classes, but let's update these specific ones: ... */
+
+/* Modernizing the primary button */
+.btn-primary {
+    background-color: #0d6efd; /* Standard Bootstrap Blue */
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Enhancing the hover cards on the index page */
+.hover-card {
+    position: relative;
+    transition: all 0.3s ease; /* Smoother transition */
+    top: 0;
+    border: 1px solid rgba(0,0,0,0.05); /* Subtle border */
+    background: #ffffff; /* Clean white background */
+}
+
+.hover-card:hover {
+    top: -8px; /* Less extreme jump */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Softer, deeper shadow */
+}
+
+/* Make your colorful index cards look more professional (less saturated) */
+.card-red {
+    background: #fff5f5;
+    border-left: 4px solid #dc3545;
+    color: #333;
+}
+.card-red ion-icon { color: #dc3545; }
+
+.card-green {
+    background: #f0fdf4;
+    border-left: 4px solid #198754;
+    color: #333;
+}
+.card-green ion-icon { color: #198754; }
+
+.card-blue {
+    background: #f0f7ff;
+    border-left: 4px solid #0d6efd;
+    color: #333;
+}
+.card-blue ion-icon { color: #0d6efd; }

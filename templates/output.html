@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Image | MalariaScanAI</title>
+</head>
+<body class="bg-light">
+    {% include 'navbar.html' %}
+
+    <div class="container-fluid m-0 g-0 py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <h2 class="mb-2 text-dark fw-bold">Scan Blood Smear</h2>
+            <p class="text-muted">Upload a segmented cell image for rapid AI diagnosis.</p>
+        </div>
+    </div>
+
+    <div class="container py-5" style="min-height: 60vh;">
+        <div class="row g-4 d-flex align-items-stretch justify-content-center">
+            
+            <div class="col-lg-5">
+                <form action="/output" method="post" enctype="multipart/form-data" class="p-4 bg-white rounded shadow-sm border h-100" id="scanForm">
+                    <div class="mb-4">
+                        <label for="model" class="form-label fw-bold text-muted small">AI MODEL ARCHITECTURE</label>
+                        <select name="model" id="model" class="form-select border-primary bg-light">
+                            <option value="0">EfficientNet (Recommended)</option>
+                            <option value="1">DenseNet (High Accuracy)</option>
+                            <option value="2">MobileNet (Fastest)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="file" class="form-label fw-bold text-muted small">UPLOAD CELL IMAGE</label>
+                        <input type="file" class="form-control bg-light" name="imagefile" id="file" accept="image/*" required onchange="previewImage(event)">
+                    </div>
+                    
+                    <div id="imagePreviewContainer" class="mb-4 d-none text-center p-3 bg-light rounded border">
+                        <p class="text-muted small fw-semibold mb-2">Ready for analysis:</p>
+                        <img id="preview" src="#" alt="Preview" class="img-thumbnail border-0 shadow-sm" style="max-height: 150px;">
+                    </div>
+
+                    <div class="d-grid mt-auto">
+                        <button type="submit" class="btn btn-primary btn-lg fw-bold shadow-sm" id="submitBtn" onclick="showLoading()">
+                            <span id="btnText">Analyze Image</span>
+                            <span id="btnLoading" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="p-4 bg-white rounded shadow-sm border h-100 d-flex flex-column justify-content-center align-items-center text-center">
+                    {% if result %}
+                        <h3 class="fw-bold mb-3 text-dark">Analysis Complete</h3>
+                        
+                        <div class="mb-4">
+                            <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill border border-primary-subtle">
+                                <ion-icon name="hardware-chip-outline" class="me-1 align-middle"></ion-icon>
+                                Scanned with {{ model_used }}
+                            </span>
+                        </div>
+                        
+                        <img src="{{ image }}" alt="Result" class="img-fluid rounded shadow-sm mb-4 border" style="max-height: 220px;">
+                        
+                        <div class="alert {% if 'Parasitized' in result %}alert-danger border-danger{% else %}alert-success border-success{% endif %} w-100 fs-5 shadow-sm">
+                            <ion-icon name="{% if 'Parasitized' in result %}warning{% else %}checkmark-circle{% endif %}" class="me-2 align-middle"></ion-icon>
+                            <strong>{{result}}</strong>
+                        </div>
+                        <a href="/output" class="btn btn-outline-secondary mt-2 fw-semibold px-4">Run Another Scan</a>
+                    {% else %}
+                        <div class="text-muted opacity-50 mb-3">
+                            <ion-icon name="scan-outline" style="font-size: 80px;"></ion-icon>
+                        </div>
+                        <h4 class="text-muted fw-bold">Awaiting Image</h4>
+                        <p class="text-muted small">The diagnostic models are standing by.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% include 'footer.html' %}
+
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('preview');
+                output.src = reader.result;
+                document.getElementById('imagePreviewContainer').classList.remove('d-none');
+            }
+            if(event.target.files[0]) reader.readAsDataURL(event.target.files[0]);
+        }
+
+        function showLoading() {
+            if(document.getElementById('file').files.length > 0) {
+                document.getElementById('btnText').innerText = 'Processing...';
+                document.getElementById('btnLoading').classList.remove('d-none');
+                document.getElementById('submitBtn').classList.add('disabled');
+            }
+        }
+    </script>
+</body>
+</html>

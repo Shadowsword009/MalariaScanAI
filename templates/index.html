@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MalariaScanAI | Intelligent Parasite Detection</title>
+</head>
+
+<body class="bg-light">
+    {% include 'navbar.html' %}
+
+    <div class="container-fluid bg-white border-bottom py-5">
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 pe-lg-5">
+                    <div class="badge bg-primary-subtle text-primary mb-3 px-3 py-2 rounded-pill fw-semibold">
+                        Powered by Deep Learning
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4 text-dark" style="letter-spacing: -1px;">
+                        Revolutionizing <span class="text-primary">Malaria Diagnosis.</span>
+                    </h1>
+                    <p class="lead text-muted mb-4">
+                        Tired of waiting for lab results? Our innovative web app uses state-of-the-art Convolutional Neural Networks to offer rapid, highly accurate malaria parasite detection directly from microscopic blood smear images.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="/output" class="btn btn-primary btn-lg px-4 shadow-sm fw-semibold">Scan an Image</a>
+                        <a href="/model" class="btn btn-outline-secondary btn-lg px-4 fw-semibold">View Architecture</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="../static/images/bg/bg.jpg" alt="Malaria Blood Smear" class="img-fluid rounded-4 shadow-lg" style="max-height: 500px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5 mt-4">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">How It Works</h2>
+            <p class="text-muted">Get reliable results in three simple steps.</p>
+        </div>
+        
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+                <div class="card-info p-4 card-red hover-card h-100 text-center shadow-sm">
+                    <ion-icon name="cloud-upload" style="font-size: 48px; margin-bottom: 15px;"></ion-icon>
+                    <h4 class="fw-bold mb-3">1. Upload Image</h4>
+                    <p class="mb-0 opacity-75">Securely upload a microscopic image of a patient's thin blood smear.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-info p-4 card-blue hover-card h-100 text-center shadow-sm">
+                    <ion-icon name="hardware-chip" style="font-size: 48px; margin-bottom: 15px;"></ion-icon>
+                    <h4 class="fw-bold mb-3">2. AI Analysis</h4>
+                    <p class="mb-0 opacity-75">Our ensemble of DenseNet, EfficientNet, and MobileNet models analyzes the cell structure pixel-by-pixel.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card-info p-4 card-green hover-card h-100 text-center shadow-sm">
+                    <ion-icon name="document-text" style="font-size: 48px; margin-bottom: 15px;"></ion-icon>
+                    <h4 class="fw-bold mb-3">3. Instant Results</h4>
+                    <p class="mb-0 opacity-75">Receive an immediate, confidence-scored diagnosis indicating the presence of parasites.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-white py-5 mt-4 border-top">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Why Choose MalariaScanAI?</h2>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="p-4 bg-light rounded-4 hover-card h-100 border text-center">
+                        <ion-icon name="bullseye" class="text-primary mb-3" style="font-size: 32px;"></ion-icon>
+                        <h5 class="fw-bold">High Accuracy</h5>
+                        <p class="text-muted small mb-0">Trained on a vast, verified dataset to minimize false positives and negatives.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 bg-light rounded-4 hover-card h-100 border text-center">
+                        <ion-icon name="flash" class="text-warning mb-3" style="font-size: 32px;"></ion-icon>
+                        <h5 class="fw-bold">Lightning Fast</h5>
+                        <p class="text-muted small mb-0">In-memory model caching delivers predictions in under a second.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 bg-light rounded-4 hover-card h-100 border text-center">
+                        <ion-icon name="globe" class="text-success mb-3" style="font-size: 32px;"></ion-icon>
+                        <h5 class="fw-bold">Highly Accessible</h5>
+                        <p class="text-muted small mb-0">Cloud-based architecture means you can diagnose from anywhere.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-4 bg-primary text-white rounded-4 hover-card h-100 d-flex flex-column justify-content-center align-items-center text-center shadow">
+                        <h5 class="fw-bold mb-3">Join the Fight</h5>
+                        <p class="small mb-4 opacity-75">Start utilizing AI for early detection today.</p>
+                        <a href="/login" class="btn btn-light fw-bold w-100 text-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

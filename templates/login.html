@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Register | MalariaScanAI</title>
+</head>
+
+<body class="bg-light">
+    {% include 'navbar.html' %}
+
+    <div class="container-fluid py-5" style="min-height: 80vh;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <ion-icon name="shield-checkmark" class="text-primary mb-2" style="font-size: 48px;"></ion-icon>
+                <h2 class="fw-bold text-dark">Welcome to MalariaScanAI</h2>
+                <p class="text-muted">Sign in to your account or create a new one to start analyzing images.</p>
+            </div>
+
+            <div class="row justify-content-center g-4">
+                
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-5">
+                            <h3 class="fw-bold mb-4 text-center">Login</h3>
+                            
+                            {% if loginError %}
+                            <div class="alert alert-danger d-flex align-items-center py-2 px-3 small" role="alert">
+                                <ion-icon name="alert-circle" class="me-2 fs-5"></ion-icon>
+                                <div>{{ loginError }}</div>
+                            </div>
+                            {% endif %}
+
+                            <form action="/login" method="post">
+                                <div class="mb-4">
+                                    <label for="username" class="form-label fw-semibold text-muted small">USERNAME</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><ion-icon name="person-outline"></ion-icon></span>
+                                        <input type="text" class="form-control bg-light border-start-0 ps-0" id="username" name="username" required>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="password" class="form-label fw-semibold text-muted small">PASSWORD</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                                        <input type="password" id="password" class="form-control bg-light border-start-0 ps-0" name="password" required>
+                                    </div>
+                                </div>
+                                <div class="text-end mt-2">
+                                    <a href="/forgot" class="text-decoration-none small text-primary">
+                                        Forgot Password?
+                                    </a>
+                                </div>
+                                <div class="d-grid mt-5">
+                                    <button type="submit" class="btn btn-primary btn-lg fw-bold shadow-sm">Sign In</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-1 d-none d-lg-flex align-items-center justify-content-center">
+                    <div class="vr h-75 text-muted opacity-25"></div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-sm h-100 bg-primary-subtle border border-primary-subtle">
+                        <div class="card-body p-5">
+                            <h3 class="fw-bold mb-4 text-center text-primary">Create Account</h3>
+                            
+                            {% if regError %}
+                            <div class="alert alert-danger d-flex align-items-center py-2 px-3 small" role="alert">
+                                <ion-icon name="alert-circle" class="me-2 fs-5"></ion-icon>
+                                <div>{{ regError }}</div>
+                            </div>
+                            {% endif %}
+
+                            <form action="/register" method="post">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label fw-semibold text-muted small">USERNAME</label>
+                                    <input type="text" class="form-control" name="name" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email2" class="form-label fw-semibold text-muted small">EMAIL ADDRESS</label>
+                                    <input type="email" class="form-control" name="email" id="email2" required>
+                                </div>
+                                <div class="row g-2 mb-4">
+                                    <div class="col-md-6">
+                                        <label for="newPass" class="form-label fw-semibold text-muted small">PASSWORD</label>
+                                        <input type="password" class="form-control" name="newPass" id="newPass" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="confPass" class="form-label fw-semibold text-muted small">CONFIRM</label>
+                                        <input type="password" class="form-control" name="confPass" id="confPass" required>
+                                    </div>
+                                </div>
+                                <div class="d-grid mt-4">
+                                    <button type="submit" class="btn btn-outline-primary btn-lg fw-bold bg-white">Register Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>
